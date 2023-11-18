@@ -1,0 +1,281 @@
+/* Variables */
+:root {
+  --bg-body: hsl(236, 33%, 92%);
+  --bg-input: hsl(0, 0%, 98%);
+  --color-placeHolder: hsl(236, 9%, 61%);
+  --input-border: hsl(233, 11%, 84%);
+  --radio-input: hsl(0, 0%, 98%);
+  --font-color: hsl(235, 19%, 35%);
+  --main-padding: 1rem 1.5rem
+}
+/* ========================================== */
+/* Reset && Global Styles*/
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  color: var(--color-placeHolder)
+}
+
+body {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--bg-body);
+}
+/* ========================================== */
+/* Start Header */
+header {
+  background-image: url("../images/bg-desktop-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
+/* End Header */
+/* ========================================== */
+/* Start Container */
+.container {
+  width: 40%;
+  margin: -600px auto;
+}
+/* End Container */
+/* ========================================== */
+/* Start App Header */
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  color: #fff;
+  letter-spacing: 10px;
+  font-size: 40px;
+}
+
+.theme-converter {
+  cursor: pointer;
+}
+/* End App Header */
+/* ========================================== */
+/* Start New Task */
+.app__new_task-add {
+  margin-bottom: 2rem;
+  padding: var(--main-padding);
+  background-color: var(--bg-input);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app__new_task-add > div {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  appearance: none;
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.01rem solid var(--input-border);
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.01rem solid var(--input-border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.inputRadioTask {
+  position: relative;
+  background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.inputRadioTask::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center url(../images/icon-check.svg);
+}
+
+.inputRadioTask + label {
+  text-decoration: line-through;
+  text-decoration-color: hsl(220, 98%, 61%);
+}
+
+.app__new_task-add input[type="text"] {
+  border: none;
+  outline: none;
+  margin-left: 1.5rem;
+  background-color: var(--bg-input);
+  caret-color: hsl(220, 98%, 61%);
+}
+
+.app__add-svg,
+.btn__delete,
+.app__footer-button,
+.app__footer-button,
+.app__footer-button,
+.app__footer-clear-completed {
+  cursor: pointer;
+}
+.btn__delete:hover .btn__delete-hover{
+  fill: #ff0000;
+}
+
+.app__new_task-add input[type="text"]::placeholder {
+  color: var(--color-placeHolder);
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+}
+/* End New Task */
+/* ========================================== */
+/* Start Current Task */
+.tasks__item {
+  position: relative;
+  padding: var(--main-padding);
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-input);
+  border-bottom: 1px solid var(--input-border);
+  border-radius: 4px;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.tasks__item :nth-child(2) {
+  margin-left: 1.5rem;
+}
+
+.tasks__item :nth-child(3) {
+  position: absolute;
+  right: 2.2rem;
+}
+#itemCountSpan {
+  color: var(--font-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-right: .3rem;
+}
+.dragging {
+  background-color: #fbfbfb;
+}
+/* End Current Task */
+/* ========================================== */
+/* Start App Footer */
+.app__footer {
+  padding: var(--main-padding);
+  background-color: var(--bg-input);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-placeHolder);
+  border-radius: 4px;
+  position: relative;
+}
+
+.app__footer-filter {
+  display: flex;
+  gap: 20px;
+}
+
+.app__footer--isActive {
+  font-weight: 700;
+  color: hsl(220, 98%, 61%);
+}
+/* End App Footer */
+/* ========================================== */
+/* Start Drag-Drop */
+.app__task-drag {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--color-placeHolder);
+}
+/* End Drag-Drop */
+/* ========================================== */
+/* Start Responsive */
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+
+  /* header.toggle__theme {
+    background-image: url('../images/bg-mobile-dark.jpg');
+  }
+
+  header:not(.toggle__theme) {
+    background-image: url('../images/bg-mobile-light.jpg');
+  } */
+
+  .app__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .container {
+    width: 80%;
+    top: 40%;
+  }
+
+  .app__footer {
+    font-size: 12px;
+  }
+
+  .app__footer-filter {
+    width: 100%;
+    font-size: 14px;
+    padding: var(--main-padding);
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+    background: var(--bg-input);
+    border-radius: 4px;
+    justify-content: center;
+  }
+
+  .app__task-drag {
+    position: absolute;
+    bottom: -120px;
+    padding: 0 3.8rem;
+  }
+}
+/* ========================================== */
+/* Start Theme */
+:root.toggle__theme {
+  --bg-body: hsl(235, 24%, 19%);
+  --bg-input: hsl(237, 14%, 26%);
+  --color-placeHolder: var(--input-border);
+  --input-border: hsl(234, 11%, 52%);
+  --font-color: hsl(234, 39%, 85%);
+}
+
+input[type="text"].toggle__theme {
+  background-color: hsl(237, 14%, 26%);
+}

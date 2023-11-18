@@ -1,0 +1,90 @@
+<!-- This Challenge from frontendmentor.io
+  https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- font awesome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@400;600&family=Raleway:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&family=Work+Sans:wght@100;300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <header class="app__header-img"></header>
+    <section>
+      <div class="container">
+        <div class="app__header">
+          <h1>TODO</h1>
+          <svg
+            class="theme-converter"
+            role="button"
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+          >
+            <path
+              fill="#FFF"
+              fill-rule="evenodd"
+              d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
+            />
+          </svg>
+        </div>
+        <div class="app__new_task-add">
+          <div>
+            <input type="radio" />
+            <input class="app__new-input" type="text" placeholder="Create a new todo..." autofocus />
+          </div>
+          <svg
+            class="app__add-svg"
+            width="40px"
+            height="40px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            tabindex="0"
+          >
+            <path
+              d="M7 12L12 12M12 12L17 12M12 12V7M12 12L12 17"
+              stroke="hsl(235, 19%, 35%)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="tasks">
+        </div>
+        <div class="app__footer">
+          <div><span id="itemCountSpan">0</span>items left</div>
+          <div class="app__footer-filter">
+            <button class="app__footer-button app__footer--isActive" data-type="all">All</button>
+            <button class="app__footer-button" data-type="active">Active</button>
+            <button class="app__footer-button" data-type="completed">Completed</button>
+          </div>
+          <div class="app__footer-clear-completed">Clear Completed</div>
+        </div>
+        <p class="app__task-drag">Drag and drop to recorder list</p>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
